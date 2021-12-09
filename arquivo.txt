@@ -1,2 +1,12 @@
 Um teste qualquer nesse arquivobash: a: command not found
+ssh-keygen -t rsa -f "/c/Users/Usuario/.ssh/github" -C 'guimoreira.ads@gmail.com'
+eval "$(ssh-agent -s)"
 
+# Iniciando o git
+git init
+git config --global user.name "Guilherme Moreira"
+git config --global user.email "guimoreira.ads@gmail.com"
+git remote add origin git@github.com:guimoreirap/temp-repo.git
+git add .
+git commit -m 'Initial'
+git push origin master
