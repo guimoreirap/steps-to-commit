@@ -1,6 +1,7 @@
 Um teste qualquer nesse arquivobash: a: command not found
 ssh-keygen -t rsa -f "/c/Users/Usuario/.ssh/github" -C 'guimoreira.ads@gmail.com'
 eval "$(ssh-agent -s)"
+ssh -add "/c/Users/Usuario/.ssh/github"
 
 # Iniciando o git
 git init
@@ -12,3 +13,5 @@ git commit -m 'Initial'
 git push origin master
 
 # Oi
+
+# Remove 
