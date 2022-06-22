@@ -1,14 +1,20 @@
-Um teste qualquer nesse arquivobash: a: command not found
+# Gera uma key nova e passa os parametros da pasta do computador local e o email do github
 ssh-keygen -t rsa -f "/c/Users/Usuario/.ssh/github" -C 'guimoreira.ads@gmail.com'
 
 # Quando fechar o terminal preciso executar isso
 eval "$(ssh-agent -s)"
+
+# Adiciona a chave do SSH do github ao repositorio local
 ssh-add "/c/Users/Usuario/.ssh/github"
 
 # Iniciando o git
 git init
+
+# Configura o Name e Email 
 git config --global user.name "Guilherme Moreira"
 git config --global user.email "guimoreira.ads@gmail.com"
+
+# Adiciona um novo repositorio para a pasta que esta sendo trabalhada
 git remote add origin git@github.com:guimoreirap/temp-repo.git
 
 # Digitar ao editar
@@ -16,3 +22,5 @@ git add .
 git commit -m 'Initial'
 git push origin master
 
+# Se existir apenas uma branch pode se utilizar apenas isso (nao obrigatorio)
+git push
