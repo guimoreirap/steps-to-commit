@@ -1,23 +1,22 @@
-# Gera uma key nova e passa os parametros da pasta do computador local e o email do github
+# Isso é pra gerar uma senha, NÃO FAZER ISSO SE JÁ EXISTE UMA SENHA VINCULADA AO COMPUTADOR
 ssh-keygen -t rsa -f "/c/Users/Usuario/.ssh/github" -C 'guimoreira.ads@gmail.com'
 
-# Quando fechar o terminal preciso executar isso
+------------------------------------------------------------------
+!!! PASSOS PARA QUANDO CRIAR UM NOVO REPOSITORIO !!!
 eval "$(ssh-agent -s)"
 
-# Adiciona a chave do SSH do github ao repositorio local
-ssh-add "/c/Users/Usuario/.ssh/github"
+ssh-add "/c/Users/Usuario/.ssh/github" ------> Adiciona a chave do SSH do github ao repositorio local (NAO SOBESCREVER)
 
-# Iniciando o git
-git init
+git init -------> inicia o git na pasta
 
 # Configura o Name e Email 
 git config --global user.name "Guilherme Moreira"
 git config --global user.email "guimoreira.ads@gmail.com"
 
-# Adiciona um novo repositorio para a pasta que esta sendo trabalhada
-git remote add origin git@github.com:guimoreirap/temp-repo.git
+git remote add origin git@github.com:guimoreirap/temp-repo.git -------> vincula a pasta ao repositorio online
 
-# Digitar ao editar
+# Quando fechar o terminal preciso executar isso para um novo commit
+eval "$(ssh-agent -s)"
 git add .
 git commit -m 'Initial'
 git push origin master
